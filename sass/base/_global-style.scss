@@ -1,0 +1,16 @@
+body {
+	font-family: Roboto, sans-serif;
+	background-color: var(--primary-background-color);
+	color: var(--primary-text-color);
+	letter-spacing: 0.03em;
+}
+
+.title {
+	@media screen and (max-width: 1199px) {
+		margin-bottom: 30px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		margin-bottom: 50px;
+	}
+}

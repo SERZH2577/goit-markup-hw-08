@@ -474,9 +474,27 @@ img {
   margin-right: 8px;
 }
 
+.header-contacts__icon.phone {
+  width: 10px;
+  height: 14px;
+}
+
+.header-contacts__icon.mail {
+  width: 14px;
+  height: 10px;
+}
+
 @media screen and (min-width: 1200px) {
   .header-contacts__icon {
     margin-right: 10px;
+  }
+  .header-contacts__icon.phone {
+    width: 10px;
+    height: 16px;
+  }
+  .header-contacts__icon.mail {
+    width: 16px;
+    height: 12px;
   }
 }
 
@@ -486,13 +504,19 @@ img {
 
 .hero {
   text-align: center;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg480.jpg");
+  padding-top: 118px;
+  padding-bottom: 118px;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: auto;
-  padding-top: 118px;
-  padding-bottom: 118px;
+}
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg-mobile@2x.jpg");
+  }
 }
 
 @media screen and (min-width: 480px) {
@@ -503,17 +527,29 @@ img {
 
 @media screen and (min-width: 768px) {
   .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg768.jpg");
     max-width: 768px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg-tablet@2x.jpg");
   }
 }
 
 @media screen and (min-width: 1200px) {
   .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg1600.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg-desktop.jpg");
     max-width: 1600px;
     padding-top: 200px;
     padding-bottom: 200px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../img/main-bg-desktop@2x.jpg");
   }
 }
 
@@ -1149,7 +1185,7 @@ img {
 }
 
 .portfolio-card__item {
-  width: 100%;
+  width: auto;
 }
 
 .portfolio-card__item:not(:last-child) {
@@ -1184,34 +1220,10 @@ img {
   }
 }
 
-.portfolio-card__title-text {
-  padding: 20px 24px;
-  border-color: var(--primary-background-color);
-  border-bottom: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
-  box-sizing: border-box;
-}
-
-.portfolio-card__title {
-  margin-bottom: 4px;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-  color: var(--primary-title-color);
-}
-
-.portfolio-card__subtitle {
-  font-size: 16px;
-  line-height: 1.87;
-  color: var(--primary-text-color);
-}
-
 .portfolio-card__link {
-  display: block;
-  width: 100%;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: box-shadow 250ms var(--main-timing);
 }
 
@@ -1240,6 +1252,31 @@ img {
 .portfolio-card__link:focus .portfolio-card__img::before {
   transform: translateY(0);
   transition: transform 250ms var(--main-timing);
+}
+
+.portfolio-card__title-text {
+  flex-grow: 1;
+  padding: 20px 24px;
+  border-color: var(--primary-background-color);
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  box-sizing: border-box;
+}
+
+.portfolio-card__title {
+  margin-bottom: 4px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--primary-title-color);
+}
+
+.portfolio-card__subtitle {
+  font-size: 16px;
+  line-height: 1.87;
+  color: var(--primary-text-color);
 }
 
 .portfolio-card__text {
